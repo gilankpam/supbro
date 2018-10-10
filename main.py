@@ -4,10 +4,12 @@ import io, json, asyncio, os, itertools, re
 from websockets.exceptions import ConnectionClosed
 import xmlrpc.client
 import yaml
+from sanic_cors import CORS
 
 config = yaml.load(io.open('config.yml', 'r'))
 supervisor = xmlrpc.client.ServerProxy(config['supervisor']['url']).supervisor
 app = Sanic()
+CORS(app)
 
 @app.websocket('/logs/<name>/<log_name>')
 async def feed(request, ws, name, log_name):
