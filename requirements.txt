@@ -3,7 +3,7 @@ httptools==0.0.11
 multidict==4.4.2
 pkg-resources==0.0.0
 pyyaml>=4.2b1
-sanic==0.8.3
+sanic==20.12.7
 Sanic-Cors==0.9.6
 Sanic-Plugins-Framework==0.6.3.dev20180717
 ujson==1.35
